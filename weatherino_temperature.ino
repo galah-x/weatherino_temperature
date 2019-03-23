@@ -1,6 +1,6 @@
 //    -*- Mode: c++     -*-
 // emacs automagically updates the timestamp field on save
-// my $ver =  'weatherino temp humidity pressure rainfall wind for moteino Time-stamp: "2019-02-24 16:20:37 john"';
+// my $ver =  'weatherino temp humidity pressure rainfall wind for moteino Time-stamp: "2019-03-01 13:07:33 john"';
 
 // $ grabserial -b 19200 -d /dev/ttyUSB1 | ts [%y%m%d%H%M%S]
 
@@ -36,8 +36,10 @@
 #define TEMP_LOOPS 240
 // 2s per loop, 8 minutes updates, 8 min is 480s , at 2s per is 240
 // note temp, pressurure, humid, othertemp come out on successive 2s intervals
-#define VOLT_LOOPS 10800
+// #define VOLT_LOOPS 10800
 // 2s per loop, 6 hr updates, ie 21600 secs, at 2s per is 10800
+ #define VOLT_LOOPS 3000
+// 2s per loop, ~2 hr updates
 
 
 
@@ -87,7 +89,7 @@ void setup() {
   radio.encrypt(null);
 #endif
   
-  sprintf(buff, "%02x weatherino_temp 201902241540", NODEID );  
+  sprintf(buff, "%02x weatherino_temp 201903011305", NODEID );  
   radio.sendWithRetry(GATEWAYID, buff, strlen(buff));
   delay(200);
   
@@ -96,6 +98,8 @@ void setup() {
   
   pinMode(BATT_MEAS_GND, OUTPUT);
   digitalWrite(BATT_MEAS_GND, HIGH);
+  // turn off divider to save power. 
+  // pinMode(BATT_MEAS_GND, INPUT);
   
   if (!bme.begin())
     {  
