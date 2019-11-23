@@ -1,6 +1,6 @@
 //    -*- Mode: c++     -*-
 // emacs automagically updates the timestamp field on save
-// my $ver =  'weatherino temp humidity pressure rainfall wind for moteino Time-stamp: "2019-03-01 13:07:33 john"';
+// my $ver =  'weatherino temp humidity pressure rainfall wind for moteino Time-stamp: "2019-03-24 15:04:39 john"';
 
 // $ grabserial -b 19200 -d /dev/ttyUSB1 | ts [%y%m%d%H%M%S]
 
@@ -15,6 +15,7 @@
 #include <Adafruit_BMP280.h>
 #include <Adafruit_SHT31.h>
 
+#include <avr/wdt.h> // watchdog
 
 
 
@@ -89,7 +90,7 @@ void setup() {
   radio.encrypt(null);
 #endif
   
-  sprintf(buff, "%02x weatherino_temp 201903011305", NODEID );  
+  sprintf(buff, "%02x weatherino_temp 20190324", NODEID );  
   radio.sendWithRetry(GATEWAYID, buff, strlen(buff));
   delay(200);
   
@@ -117,6 +118,7 @@ void setup() {
     }
     
   radio.sleep();
+  wdt_enable(WDTO_4S);
 }
 
 /************************** MAIN ***************/
@@ -174,7 +176,6 @@ void loop() {
       // turn on battery divider
       pinMode(BATT_MEAS_GND, OUTPUT);
       digitalWrite(BATT_MEAS_GND, LOW);
-      // do a few adc reads to let is settle. Use the last one
       delay(2); // Wait for Vin to settle
       batt_adc =  analogRead(BATT_IN);
       
@@ -217,9 +218,9 @@ void loop() {
   
   volt_loop--;
   LowPower.powerDown(SLEEP_2S, ADC_OFF, BOD_OFF);  //put microcontroller to sleep to save battery life
-
-  // Blink(LED);
+  wdt_reset();   // pat fido.
 }
+
 
 void Blink(byte pin)
 {
