@@ -1,0 +1,59 @@
+Making a Stevenson screen
+
+The weatherino should live somewhere about 1m .. 1.5m above ground level, in an
+enclosure that exposes it to ambient temperature, and not the sun.
+
+The classic way to do this is a Stevenson screen - with double white timber
+louvres on each side to manage airflow.
+Open bottom, layered, insulated roof. Vent at top.
+
+I made one like this. Its probably complete overkill, but was cheap.
+
+See the photos.
+
+step
+
+1.  Weld together a basic steel frame from 25mm steel square tube. Mine was about 410mm wide x  340 mm high.
+Keep the welds on the inside so the outer surfact is reasonably flat.
+
+2. Make a second side, then turn it into a basic frame. Mine is 410 x 410mm.
+   Add some lugs at the bottom for mounting.
+   Add some supports on the top for a lid.
+   Add a bar across the middle, mayb e1/3 of the way up to mount the weatherino_temperature.
+   Paint with a rust protecting expoxy paint.
+
+3. Aquire some timber louvres. You can make them if you are skilled.
+   I bought some nice old western red cedar doors off GumTree (An Australian Craigslist). wash them down to get off the dust, wipe with turps to remove any oil.
+   You will need 8 sides to match the frame.
+   There need to be 2 layers of crossed louvres on each side.   
+   Cut the louvre source up as needed and paint white.
+
+4. Drive in some fence pickets with a dolly and bolt the frame to it.
+
+5. Add a Lid. Mine was a piece of waterproof plywood, painted white. Probably 12mm ply, although 18mm (3/4) would be fine too.  
+
+6. Add a second layer lid to insulate from the sun. more plywood, painted white, spaced off the inner lid by a finger (more ply)
+
+7. Add the weatherino to the bar in the middle. Cable ties are more than adequate.
+
+8. Screw 4 timber sides around the frame. This is the first layer of louvres.
+   I drilled and tapped the metal frame for M4 stainless screws.
+   The 25mm square tube was a bit thick for self tappers..
+   Note the inner layer of louvres should be crossed to the outer layer, so
+   these are mounted backwards... in that water would flow in.
+   I didn't bother with an opening side, the weatherino can be accessed
+   from below.
+
+9. Screw a second layer of louvres over the inner layer.
+   Notice this layer is crossed to the inner layer, so appears to be
+   mounted correctly. ie rain doesn't flow inside.
+
+10. Add some polycarbonate roof sheeting to the top as a roof. Slope it so the
+    rain runs off.
+    Glue a 6V solar cell to one side. I used the eastern wall, as that
+    direction had a clear view to the sun in the morning.
+    The Northern wall is covered by a dwelling a few metres away, that shades
+    the Stevenson screen in winter (yes, I'm in the Southern hemisphere)
+
+This has been in place for nearly 3 years now and works well. I don't see any apparent temperature discontinuities as the sun rises and hits the screen. Previos boxes had real issues that way.
+
